@@ -1,0 +1,8 @@
+.idea/*
+*.iml
+
+build.hxml
+*.html
+*.js
+
+App.hx
