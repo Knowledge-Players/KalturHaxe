@@ -34,5 +34,5 @@ class KalturaSession{
 			client.doQueue(callback);
 	}
 
-
+	// TODO terminate
 }

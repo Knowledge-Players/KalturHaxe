@@ -2,7 +2,7 @@ package kalturhaxe;
 
 class KalturaConfiguration{
 
-	public var serviceUrl (default, default):String = "http://www.kaltura.com/";
+	public var serviceUrl (default, set):String = "http://www.kaltura.com/";
 
 	public var partnerId (default, default): Int;
 
@@ -14,5 +14,10 @@ class KalturaConfiguration{
 
 	public function new(partnerId: Int){
 		this.partnerId = partnerId;
+	}
+
+	public function set_serviceUrl(url:String):String
+	{
+		return serviceUrl = url;
 	}
 }

@@ -80,7 +80,7 @@ class KalturaHaxe{
 			return candidates[i];
 	}
 
-	/*
+/*
 client.ks = results.substr(1, results.length-2);
 				client.flavorAsset.getEntryById(function(success, results){
 					if(!success)

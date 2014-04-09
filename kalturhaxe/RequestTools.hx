@@ -28,7 +28,6 @@ class RequestTools{
 	public static function executeRequest(callback: Bool -> String -> Void, url: String, params: StringMap<String>, files: StringMap<String>):Void
 	{
 		var target = url + '&' + buildQuery(params);
-		//trace(target);
 		var http = new Http(target);
 		http.onData = function(data){
 			callback(true, data);
@@ -38,7 +37,7 @@ class RequestTools{
 			callback(false, msg);
 		}
 
-		http.request();
+		http.request(true);
 	}
 
 	static function buildQuery(formdata: StringMap<String>, ?numeric_prefix: Int, ?arg_separator: String = "&") {

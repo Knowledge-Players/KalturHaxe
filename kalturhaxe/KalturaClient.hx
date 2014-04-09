@@ -32,8 +32,8 @@ class KalturaClient{
 
 	public function queueServiceActionCall(service:String, action:String, params:StringMap<String>, ?files:StringMap<String>):Void
 	{
-		if(!params.exists("partnerId") || params.get("partnerId") == "-1")
-			params.set("partnerId", Std.string(config.partnerId));
+		/*if(!params.exists("partnerId") || params.get("partnerId") == "-1")
+			params.set("partnerId", Std.string(config.partnerId));*/
 
 		RequestTools.addParam(params, "ks", Native(ks));
 
