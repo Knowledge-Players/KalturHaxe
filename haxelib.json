@@ -2,10 +2,10 @@
     "name": "kalturhaxe",
     "url": "https://github.com/Knowledge-Players/KalturHaxe",
     "license": "MIT",
-    "tags": [ "web", "utility"],
+    "tags": [ "web", "utility", "video"],
     "description": "API for the open-source video solution Kaltura (Kaltura.org)",
-    "version": "0.0.1",
-    "releasenote": "Basic API functions",
+    "version": "0.0.3",
+    "releasenote": "Fix some API calls with null partnerId",
     "contributors": [ "knowledge-players" ],
     "dependencies": {}
 }
