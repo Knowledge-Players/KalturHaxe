@@ -35,7 +35,7 @@ class KalturaHaxe{
 		}, secret, userId, type, partnerId, expiry, privileges);
 	}
 
-	public function getBitrateWiseAsset(entryId:String, bitrate: Int, ?storageId: String, ?forceProxy: Bool = false, callback:Bool -> String -> Void):Void
+	public function getBitrateWiseAsset(entryId:String, bitrate: Float, ?storageId: String, ?forceProxy: Bool = false, callback:Bool -> String -> Void):Void
 	{
 		client.flavorAsset.getEntryById(function(success, result){
 			//trace("callback1: ", success);
@@ -61,7 +61,7 @@ class KalturaHaxe{
 	// Internals
 	//
 
-	private function selectByBitrate(candidates: Array<FlavorAssetResponse>, targetedBitrate: Int):FlavorAssetResponse
+	private function selectByBitrate(candidates: Array<FlavorAssetResponse>, targetedBitrate: Float):FlavorAssetResponse
 	{
 		candidates.sort(function(e1, e2){
 			if(e1.bitrate < e2.bitrate)
@@ -79,23 +79,4 @@ class KalturaHaxe{
 		else
 			return candidates[i];
 	}
-
-/*
-client.ks = results.substr(1, results.length-2);
-				client.flavorAsset.getEntryById(function(success, results){
-					if(!success)
-						js.Lib.alert(results);
-					else{
-						var res = Json.parse(results);
-						var a = new Array<Dynamic>();
-						for(f in Reflect.fields(res))
-							a.push(Reflect.field(res, f));
-						trace(a);
-						for(o in a)
-							trace(o.bitrate);
-						//trace(res);
-					}
-				}, entryId);
-
- */
 }
